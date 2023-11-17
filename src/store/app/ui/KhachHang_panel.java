@@ -398,8 +398,7 @@ public class KhachHang_panel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     public boolean validateForm() {//kiểm tra nhập liệu để trống
-        if (txtTenKH.getText().isEmpty() || 
-            txtSDT.getText().isEmpty() || txtEmail.getText().isEmpty()) {
+        if (txtTenKH.getText().isEmpty()) {
             return false;
         }
         return true;
@@ -701,6 +700,9 @@ public class KhachHang_panel extends javax.swing.JPanel {
     }
       
      public static boolean checkEmail(JTextField field, StringBuilder sb) {
+         if ( field.getText().isBlank()) {
+             return true;
+         }
         boolean ok = true;
 
         Pattern pattern = Pattern.compile("\\w+@\\w+\\.\\w+");
@@ -715,6 +717,9 @@ public class KhachHang_panel extends javax.swing.JPanel {
     }
      
      public static boolean checkSDT(JTextField field, StringBuilder sb) {
+         if (field.getText().isBlank()) {
+             return true;
+         }
         boolean ok = true;
 
         Pattern pattern = Pattern.compile("(0?)(3[2-9]|5[6|8|9]"
