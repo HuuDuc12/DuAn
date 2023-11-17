@@ -12,7 +12,7 @@ import java.sql.*;
  */
 public class XJDBC {
     private static String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static String dburl="jdbc:sqlserver://localhost;database=QuanLyBanHang;encrypt=true;trustServerCertificate=true;";
+    private static String dburl="jdbc:sqlserver://localhost;database=QuanLyBanHang1;encrypt=true;trustServerCertificate=true;";
     private static String username="sa1";
     private static String password="123";
     public static store.app.utils.clsConnectDB connection = new  store.app.utils.clsConnectDB ();   

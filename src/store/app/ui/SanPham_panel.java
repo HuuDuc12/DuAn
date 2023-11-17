@@ -35,6 +35,7 @@ public class SanPham_panel extends javax.swing.JPanel {
      * Creates new form NhanVien_panel
      */
     public SanPham_panel() {
+        
         initComponents();
         init();
     }
@@ -242,6 +243,7 @@ public class SanPham_panel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        setMaximumSize(new java.awt.Dimension(1254, 32767));
 
         lblTitle.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(30, 55, 153));
@@ -344,9 +346,7 @@ public class SanPham_panel extends javax.swing.JPanel {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jScrollPane5)
-                        .addGap(0, 0, 0))
+                    .addComponent(jScrollPane5)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()

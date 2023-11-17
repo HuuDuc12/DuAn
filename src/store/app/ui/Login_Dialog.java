@@ -92,18 +92,18 @@ public class Login_Dialog extends javax.swing.JDialog {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
         jLabel2.setText("Tên đăng nhập :");
 
         txtUsername.setText("NV001");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
         jLabel3.setText("Mật khẩu :");
 
         txtPassword.setText("123");
 
         btnLogin.setBackground(new java.awt.Color(204, 255, 204));
-        btnLogin.setFont(new java.awt.Font("Bahnschrift", 0, 13)); // NOI18N
+        btnLogin.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/Boy.png"))); // NOI18N
         btnLogin.setText("LOGIN");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +113,7 @@ public class Login_Dialog extends javax.swing.JDialog {
         });
 
         bntExit.setBackground(new java.awt.Color(204, 255, 204));
-        bntExit.setFont(new java.awt.Font("Bahnschrift", 0, 13)); // NOI18N
+        bntExit.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         bntExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/Anchor.png"))); // NOI18N
         bntExit.setText("EXIT");
         bntExit.addActionListener(new java.awt.event.ActionListener() {
@@ -122,6 +122,7 @@ public class Login_Dialog extends javax.swing.JDialog {
             }
         });
 
+        chkShowpass.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
         chkShowpass.setText("Show password ?");
         chkShowpass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,6 +132,7 @@ public class Login_Dialog extends javax.swing.JDialog {
 
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/th (2).jpg"))); // NOI18N
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setText("Quên mật khẩu ?");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -145,7 +147,7 @@ public class Login_Dialog extends javax.swing.JDialog {
         jLabel4.setText("LOGIN");
 
         btnKetnoidt.setBackground(new java.awt.Color(204, 255, 204));
-        btnKetnoidt.setFont(new java.awt.Font("Bahnschrift", 0, 13)); // NOI18N
+        btnKetnoidt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
         btnKetnoidt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/Boy.png"))); // NOI18N
         btnKetnoidt.setText("Kết nối database");
         btnKetnoidt.addActionListener(new java.awt.event.ActionListener() {
@@ -351,16 +353,19 @@ public class Login_Dialog extends javax.swing.JDialog {
             return;
         }
         
-        String manv = txtUsername.getText();//manv là usernam
-        String matkhau = new String(txtPassword.getPassword());
-        NhanVien nv = dao.selectById(manv);//tìm nhân viên theo mã nv
+        String manv =  txtUsername.getText();//manv là usernam
+        String matkhau = hashPassword(new String(txtPassword.getPassword()));
         
+        NhanVien nv = dao.selectById(manv);//tìm nhân viên theo mã nv
+         String MKluu = nv.getMatKhau();
+         System.out.println(MKluu+": "+matkhau);
+
         if (nv==null) {//không tìm thấy username
             MsgBox.showErrorDialog(this, "Sai tên đăng nhập","Lỗi");
-        }else if(!matkhau.equals(nv.getMatKhau())){
+        }else if(!matkhau.equals(MKluu)){
             MsgBox.showErrorDialog(this, "Sai mật khẩu","Lỗi");
-        }else{
-            Auth.user = nv; // gán user login thành công
+        }else{     
+          Auth.user = nv;   // gán user login thành công
             MsgBox.showMessageDialog(this, "Đăng nhập thành công !\nNgười dùng " + "'" +Auth.user.getMaNV() + "'");
             MainFrame mainfr = new MainFrame();
             mainfr.setVisible(true);

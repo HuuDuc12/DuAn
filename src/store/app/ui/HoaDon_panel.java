@@ -315,6 +315,7 @@ public class HoaDon_panel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        setMaximumSize(new java.awt.Dimension(1254, 32767));
         setPreferredSize(new java.awt.Dimension(679, 600));
 
         jlbTitle.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -404,7 +405,7 @@ public class HoaDon_panel extends javax.swing.JPanel {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        btnSave.setBackground(new java.awt.Color(246, 185, 59));
+        btnSave.setBackground(new java.awt.Color(204, 255, 204));
         btnSave.setForeground(new java.awt.Color(30, 55, 153));
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/them.png"))); // NOI18N
         btnSave.setText("Save");
@@ -414,7 +415,7 @@ public class HoaDon_panel extends javax.swing.JPanel {
             }
         });
 
-        btnEdit.setBackground(new java.awt.Color(246, 185, 59));
+        btnEdit.setBackground(new java.awt.Color(204, 255, 204));
         btnEdit.setForeground(new java.awt.Color(30, 55, 153));
         btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/sua.png"))); // NOI18N
         btnEdit.setText("Edit");
@@ -424,7 +425,7 @@ public class HoaDon_panel extends javax.swing.JPanel {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(246, 185, 59));
+        btnDelete.setBackground(new java.awt.Color(204, 255, 204));
         btnDelete.setForeground(new java.awt.Color(30, 55, 153));
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/delete-button.png"))); // NOI18N
         btnDelete.setText("Delete");
@@ -434,7 +435,7 @@ public class HoaDon_panel extends javax.swing.JPanel {
             }
         });
 
-        btnNew.setBackground(new java.awt.Color(246, 185, 59));
+        btnNew.setBackground(new java.awt.Color(204, 255, 204));
         btnNew.setForeground(new java.awt.Color(30, 55, 153));
         btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/Anchor.png"))); // NOI18N
         btnNew.setText("New");
@@ -444,7 +445,7 @@ public class HoaDon_panel extends javax.swing.JPanel {
             }
         });
 
-        btnFirst.setBackground(new java.awt.Color(246, 185, 59));
+        btnFirst.setBackground(new java.awt.Color(204, 255, 204));
         btnFirst.setForeground(new java.awt.Color(30, 55, 153));
         btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/last.png"))); // NOI18N
         btnFirst.setToolTipText("");
@@ -454,7 +455,7 @@ public class HoaDon_panel extends javax.swing.JPanel {
             }
         });
 
-        btnPrev.setBackground(new java.awt.Color(246, 185, 59));
+        btnPrev.setBackground(new java.awt.Color(204, 255, 204));
         btnPrev.setForeground(new java.awt.Color(30, 55, 153));
         btnPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/back.png"))); // NOI18N
         btnPrev.addActionListener(new java.awt.event.ActionListener() {
@@ -463,7 +464,7 @@ public class HoaDon_panel extends javax.swing.JPanel {
             }
         });
 
-        btnNext.setBackground(new java.awt.Color(246, 185, 59));
+        btnNext.setBackground(new java.awt.Color(204, 255, 204));
         btnNext.setForeground(new java.awt.Color(30, 55, 153));
         btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/next.png"))); // NOI18N
         btnNext.addActionListener(new java.awt.event.ActionListener() {
@@ -472,7 +473,7 @@ public class HoaDon_panel extends javax.swing.JPanel {
             }
         });
 
-        btnLast.setBackground(new java.awt.Color(246, 185, 59));
+        btnLast.setBackground(new java.awt.Color(204, 255, 204));
         btnLast.setForeground(new java.awt.Color(30, 55, 153));
         btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/first.png"))); // NOI18N
         btnLast.addActionListener(new java.awt.event.ActionListener() {
@@ -486,15 +487,15 @@ public class HoaDon_panel extends javax.swing.JPanel {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addContainerGap()
                 .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnEdit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnDelete)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnNew)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 332, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -508,17 +509,16 @@ public class HoaDon_panel extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnPrev)
-                    .addComponent(btnNext)
-                    .addComponent(btnLast)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnPrev, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnNext, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLast, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnDelete)
                         .addComponent(btnEdit)
-                        .addComponent(btnSave))
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnFirst)))
+                        .addComponent(btnSave)
+                        .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(btnFirst, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -647,7 +647,7 @@ public class HoaDon_panel extends javax.swing.JPanel {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 984, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(

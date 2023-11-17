@@ -70,6 +70,7 @@ public class thongTinTaiKhoan_panel extends javax.swing.JPanel {
         jLabel3.setText("Tên nhân viên");
         jLabel3.setName("jLabel3"); // NOI18N
 
+        jButton1.setBackground(new java.awt.Color(204, 255, 204));
         jButton1.setText("Chỉnh sử thông tin");
         jButton1.setName("jButton1"); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +79,7 @@ public class thongTinTaiKhoan_panel extends javax.swing.JPanel {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(204, 255, 204));
         jButton2.setText("Đổi mật khẩu");
         jButton2.setName("jButton2"); // NOI18N
 

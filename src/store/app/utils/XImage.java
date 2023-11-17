@@ -26,7 +26,7 @@ public class XImage {
     public static final Image APP_ICON;
     static{
     // Tải biểu tượng ứng dụng
-    String file = "/store/app/icons/icon.png";
+    String file = "/store/app/icons/logoBaeTeam.jpg";
     APP_ICON = new ImageIcon(XImage.class.getResource(file)).getImage();
     }
     
@@ -36,7 +36,7 @@ public class XImage {
      */
     
     public static boolean saveLogo(File file){
-     File dir = new File("D:\\Du an 1\\store-app\\src\\main\\images");  //khai báo thư mục logos ngang hàng với src
+     File dir = new File("..\\src\\main\\images");  //khai báo thư mục logos ngang hàng với src
      // Tạo thư mục nếu chưa tồn tại
      if(!dir.exists()){
         dir.mkdirs();
@@ -60,12 +60,12 @@ public class XImage {
      * @return ảnh đọc trước
      */
     public static ImageIcon readLogo(String fileName){
-    File path = new File("D:\\Du an 1\\store-app\\src\\main\\images", fileName);
+    File path = new File("..\\src\\main\\images", fileName);
     return new ImageIcon(new ImageIcon(path.getAbsolutePath()).getImage().getScaledInstance(300, 300, Image.SCALE_DEFAULT)); 
     }
     
     public static ImageIcon readLogoHDCT(String fileName){
-    File path = new File("D:\\Du an 1\\store-app\\src\\main\\images", fileName);
+    File path = new File("..\\src\\main\\images", fileName);
     return new ImageIcon(new ImageIcon(path.getAbsolutePath()).getImage().getScaledInstance(160, 160, Image.SCALE_DEFAULT)); 
     }
 }

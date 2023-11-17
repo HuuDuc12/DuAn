@@ -7,6 +7,7 @@ package store.app.ui;
 
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -24,6 +25,12 @@ public final class Chao_Dialog extends javax.swing.JDialog {
      */
     public Chao_Dialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+         int width = Toolkit.getDefaultToolkit().getScreenSize().width;
+        int height = Toolkit.getDefaultToolkit().getScreenSize().height;
+
+        // Set full screen size
+        this.setSize(width, height);
+        this.setUndecorated(true);
 //gDevice = gEnaEnvironment.getDefaultScreenDevice();
         initComponents();
 //        FullScreen();
@@ -46,7 +53,9 @@ public final class Chao_Dialog extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("CỬA HÀNG NIKE STORE\n");
+        setMaximumSize(new java.awt.Dimension(1920, 1080));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1900, 1080));
 
         jPanel1.setBackground(new java.awt.Color(245, 238, 220));
         jPanel1.setPreferredSize(new java.awt.Dimension(1900, 1080));

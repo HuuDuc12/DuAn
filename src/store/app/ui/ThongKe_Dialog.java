@@ -121,6 +121,7 @@ public class ThongKe_Dialog extends javax.swing.JDialog {
         pnlTimKiem.setBackground(new java.awt.Color(255, 255, 255));
         pnlTimKiem.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        btnTimSpKhBanDuoc.setBackground(new java.awt.Color(204, 255, 204));
         btnTimSpKhBanDuoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/magnifying-glass.png"))); // NOI18N
         btnTimSpKhBanDuoc.setText("Tìm kiếm");
         btnTimSpKhBanDuoc.addActionListener(new java.awt.event.ActionListener() {
@@ -157,6 +158,7 @@ public class ThongKe_Dialog extends javax.swing.JDialog {
             }
         });
 
+        btnNhapLai.setBackground(new java.awt.Color(204, 255, 204));
         btnNhapLai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/reload.png"))); // NOI18N
         btnNhapLai.setText("Nhập lại");
         btnNhapLai.addActionListener(new java.awt.event.ActionListener() {

@@ -83,16 +83,15 @@ public class Home_panel extends javax.swing.JPanel {
         lblVaiTro = new javax.swing.JLabel();
         lblDoiMatKhau = new javax.swing.JLabel();
         buttonGroup1 = new javax.swing.ButtonGroup();
-        pnlTaskBar = new javax.swing.JPanel();
-        lblDongHo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         lblAPP = new javax.swing.JLabel();
         lblWeb = new javax.swing.JLabel();
         lblInfo = new javax.swing.JLabel();
         lblIntroduce = new javax.swing.JLabel();
-        lblLogout = new javax.swing.JLabel();
         lblChangePass = new javax.swing.JLabel();
+        lblLogout = new javax.swing.JLabel();
         lblExit = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        lblDongHo = new javax.swing.JLabel();
 
         ChangePass_Dialog.setTitle("ĐỔI MẬT KHẨU");
         ChangePass_Dialog.setBackground(new java.awt.Color(30, 55, 153));
@@ -380,20 +379,20 @@ public class Home_panel extends javax.swing.JPanel {
         );
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(679, 500));
+        setPreferredSize(new java.awt.Dimension(679, 900));
 
-        pnlTaskBar.setBackground(new java.awt.Color(255, 255, 255));
-        pnlTaskBar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/mainIMGSmall.jpg"))); // NOI18N
+        jLabel1.setMaximumSize(new java.awt.Dimension(1254, 500));
+        jLabel1.setMinimumSize(new java.awt.Dimension(1254, 500));
+        jLabel1.setPreferredSize(new java.awt.Dimension(1254, 500));
 
-        lblDongHo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblDongHo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/Alarm.png"))); // NOI18N
-        lblDongHo.setText("00:00 AM");
-
+        lblAPP.setFont(new java.awt.Font("Segoe UI Semilight", 0, 10)); // NOI18N
         lblAPP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/Info.png"))); // NOI18N
         lblAPP.setText("BaeTea@gmail.com");
 
-        lblWeb.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lblWeb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/sneakers.png"))); // NOI18N
+        lblWeb.setFont(new java.awt.Font("Segoe UI Semilight", 0, 10)); // NOI18N
+        lblWeb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/BaeTeam.jpg"))); // NOI18N
         lblWeb.setText("WEBSITE STORE");
         lblWeb.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -407,8 +406,8 @@ public class Home_panel extends javax.swing.JPanel {
             }
         });
 
-        lblInfo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lblInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/sneakers.png"))); // NOI18N
+        lblInfo.setFont(new java.awt.Font("Segoe UI Semilight", 0, 10)); // NOI18N
+        lblInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/BaeTeam.jpg"))); // NOI18N
         lblInfo.setText("INFO ");
         lblInfo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -422,8 +421,8 @@ public class Home_panel extends javax.swing.JPanel {
             }
         });
 
-        lblIntroduce.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lblIntroduce.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/sneakers.png"))); // NOI18N
+        lblIntroduce.setFont(new java.awt.Font("Segoe UI Semilight", 0, 10)); // NOI18N
+        lblIntroduce.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/BaeTeam.jpg"))); // NOI18N
         lblIntroduce.setText("INTRODUCE");
         lblIntroduce.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -437,23 +436,8 @@ public class Home_panel extends javax.swing.JPanel {
             }
         });
 
-        lblLogout.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lblLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/sneakers.png"))); // NOI18N
-        lblLogout.setText("LOG OUT");
-        lblLogout.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblLogoutMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblLogoutMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblLogoutMouseExited(evt);
-            }
-        });
-
-        lblChangePass.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lblChangePass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/sneakers.png"))); // NOI18N
+        lblChangePass.setFont(new java.awt.Font("Segoe UI Semilight", 0, 10)); // NOI18N
+        lblChangePass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/BaeTeam.jpg"))); // NOI18N
         lblChangePass.setText("CHANGE PASSWORD");
         lblChangePass.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -467,8 +451,23 @@ public class Home_panel extends javax.swing.JPanel {
             }
         });
 
-        lblExit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        lblExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/sneakers.png"))); // NOI18N
+        lblLogout.setFont(new java.awt.Font("Segoe UI Semilight", 0, 10)); // NOI18N
+        lblLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/BaeTeam.jpg"))); // NOI18N
+        lblLogout.setText("LOG OUT");
+        lblLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblLogoutMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblLogoutMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblLogoutMouseExited(evt);
+            }
+        });
+
+        lblExit.setFont(new java.awt.Font("Segoe UI Semilight", 0, 10)); // NOI18N
+        lblExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/BaeTeam.jpg"))); // NOI18N
         lblExit.setText("EXIT");
         lblExit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -482,71 +481,52 @@ public class Home_panel extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout pnlTaskBarLayout = new javax.swing.GroupLayout(pnlTaskBar);
-        pnlTaskBar.setLayout(pnlTaskBarLayout);
-        pnlTaskBarLayout.setHorizontalGroup(
-            pnlTaskBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTaskBarLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(lblAPP, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblWeb, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblIntroduce)
-                .addGap(18, 18, 18)
-                .addComponent(lblChangePass)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblExit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        pnlTaskBarLayout.setVerticalGroup(
-            pnlTaskBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlTaskBarLayout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addGroup(pnlTaskBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAPP, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblWeb, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIntroduce, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblChangePass, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTaskBarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlTaskBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDongHo)
-                    .addComponent(lblExit, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14))
-        );
-
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/arrangement-with-delicious-tra-4718-8252-1696387694.jpg"))); // NOI18N
+        lblDongHo.setFont(new java.awt.Font("Segoe UI Semilight", 0, 10)); // NOI18N
+        lblDongHo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDongHo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/Alarm.png"))); // NOI18N
+        lblDongHo.setText("00:00 AM");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(pnlTaskBar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblAPP, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblIntroduce)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblChangePass)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblExit, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblWeb, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 732, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 801, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlTaskBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblIntroduce, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblChangePass, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAPP, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblExit, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblWeb, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDongHo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -702,7 +682,6 @@ public class Home_panel extends javax.swing.JPanel {
     private javax.swing.JLabel lblTenNV;
     private javax.swing.JLabel lblVaiTro;
     private javax.swing.JLabel lblWeb;
-    private javax.swing.JPanel pnlTaskBar;
     private javax.swing.JRadioButton rdoNam;
     private javax.swing.JRadioButton rdoNu;
     private javax.swing.JPasswordField txtPassCu;

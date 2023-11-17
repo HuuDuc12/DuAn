@@ -295,6 +295,9 @@
         <EtchetBorder/>
       </Border>
     </Property>
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1254, 32767]"/>
+    </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[679, 600]"/>
     </Property>
@@ -667,15 +670,15 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnSave" min="-2" pref="77" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btnEdit" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btnNew" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="332" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnFirst" min="-2" pref="56" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnPrev" min="-2" pref="54" max="-2" attributes="0"/>
@@ -689,21 +692,19 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnPrev" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnNext" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnLast" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="btnPrev" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btnNext" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btnLast" alignment="0" max="32767" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                       <Component id="btnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="btnEdit" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="btnSave" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnNew" alignment="3" pref="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="btnNew" alignment="1" min="-2" pref="23" max="-2" attributes="0"/>
-                                      <Component id="btnFirst" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="btnFirst" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace pref="23" max="32767" attributes="0"/>
                           </Group>
@@ -714,7 +715,7 @@
                     <Component class="javax.swing.JButton" name="btnSave">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="3b" green="b9" red="f6" type="rgb"/>
+                          <Color blue="cc" green="ff" red="cc" type="rgb"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="99" green="37" red="1e" type="rgb"/>
@@ -731,7 +732,7 @@
                     <Component class="javax.swing.JButton" name="btnEdit">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="3b" green="b9" red="f6" type="rgb"/>
+                          <Color blue="cc" green="ff" red="cc" type="rgb"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="99" green="37" red="1e" type="rgb"/>
@@ -748,7 +749,7 @@
                     <Component class="javax.swing.JButton" name="btnDelete">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="3b" green="b9" red="f6" type="rgb"/>
+                          <Color blue="cc" green="ff" red="cc" type="rgb"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="99" green="37" red="1e" type="rgb"/>
@@ -765,7 +766,7 @@
                     <Component class="javax.swing.JButton" name="btnNew">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="3b" green="b9" red="f6" type="rgb"/>
+                          <Color blue="cc" green="ff" red="cc" type="rgb"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="99" green="37" red="1e" type="rgb"/>
@@ -782,7 +783,7 @@
                     <Component class="javax.swing.JButton" name="btnFirst">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="3b" green="b9" red="f6" type="rgb"/>
+                          <Color blue="cc" green="ff" red="cc" type="rgb"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="99" green="37" red="1e" type="rgb"/>
@@ -799,7 +800,7 @@
                     <Component class="javax.swing.JButton" name="btnPrev">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="3b" green="b9" red="f6" type="rgb"/>
+                          <Color blue="cc" green="ff" red="cc" type="rgb"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="99" green="37" red="1e" type="rgb"/>
@@ -815,7 +816,7 @@
                     <Component class="javax.swing.JButton" name="btnNext">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="3b" green="b9" red="f6" type="rgb"/>
+                          <Color blue="cc" green="ff" red="cc" type="rgb"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="99" green="37" red="1e" type="rgb"/>
@@ -831,7 +832,7 @@
                     <Component class="javax.swing.JButton" name="btnLast">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="3b" green="b9" red="f6" type="rgb"/>
+                          <Color blue="cc" green="ff" red="cc" type="rgb"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="99" green="37" red="1e" type="rgb"/>
@@ -865,7 +866,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" pref="984" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>

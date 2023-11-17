@@ -12,6 +12,9 @@ import java.awt.event.MouseListener;
 import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.swing.border.MatteBorder;
+import javax.swing.plaf.BorderUIResource;
 import store.app.beans.DanhMucBeans;
 import store.app.ui.HoaDon_panel;
 import store.app.ui.Home_panel;
@@ -97,7 +100,7 @@ public class ChuyenManHinh {
             root.setLayout(new BorderLayout());
             root.add(node);
             root.validate();
-//            root.repaint();
+            root.repaint();
             setChangeBackground(kind);
         }
 
@@ -117,13 +120,14 @@ public class ChuyenManHinh {
         @Override
         public void mouseEntered(MouseEvent e) {// khi rê vào menu thì sẽ đổi màu
             jpnItem.setBackground(Color.white);
+            jpnItem.setBorder(new MatteBorder(0, 1, 0, 0, Color.black));
         }
 
         @Override
         public void mouseExited(MouseEvent e) { //khi thoát rê chuột ở menu
              jpnItem.setBackground( new Color(255,204,204));
              jlbItem.setBackground(Color.black);
-            
+            jpnItem.setBorder(new MatteBorder(0, 0, 0, 0, new Color(255,204,204)));
         }
 
         private void setChangeBackground(String kind) {
