@@ -364,7 +364,7 @@ public class NhanVien_panel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8"
+                "Mã NV", "Tên NV", "Giới tính", "Địa chỉ", "Số điện thoại", "Ngày sinh", "Mật khẩu", "Vai trò"
             }
         ));
         tbNhanVien.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -398,28 +398,28 @@ public class NhanVien_panel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     public boolean validateForm() {//kiểm tra nhập liệu để trống
-        if (txtTenNV.getText().isEmpty() || txtMatKhau.getText().isEmpty() || 
-            txtDiaChi.getText().isEmpty() || txtSDT.getText().isEmpty() 
-                || txtXacNhanMatKhau.getText().isEmpty() ||
-                ((JTextField)dateChooser.getDateEditor().getUiComponent()).getText().isEmpty()) {
+        if (txtTenNV.getText().isEmpty() || txtMatKhau.getText().isEmpty()
+                || txtDiaChi.getText().isEmpty() || txtSDT.getText().isEmpty()
+                || txtXacNhanMatKhau.getText().isEmpty()
+                || ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText().isEmpty()) {
             return false;
         }
         return true;
     }
-    
+
     public boolean checkTrungMa(JTextField txt) {//kiểm tra trùng mã nhân viên
         txt.setBackground(white);
         if (dao.selectById(txt.getText()) == null) {
             return true;
         } else {
             txt.setBackground(Color.pink);
-            MsgBox.showMessageDialog(this,"Mã nhân viên "+ txt.getText()+ " đã tồn tại");
+            MsgBox.showMessageDialog(this, "Mã nhân viên " + txt.getText() + " đã tồn tại");
             return false;
         }
     }
-    
+
     private void tbNhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbNhanVienMouseClicked
-        if (evt.getClickCount()==1) {
+        if (evt.getClickCount() == 1) {
             this.row = tbNhanVien.getSelectedRow();
             this.edit();
         }
@@ -446,46 +446,46 @@ public class NhanVien_panel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnMoiActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        StringBuilder sb= new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         checkSDT(txtSDT, sb);
-        
+
         String s1 = new String(txtMatKhau.getPassword());
         String s2 = new String(txtXacNhanMatKhau.getPassword());
-        
-            if (s1.equals(s2)==false) {
-                MsgBox.showMessageDialog(this,  "Mật khẩu không khớp");
-                txtXacNhanMatKhau.setBackground(Color.pink);
+
+        if (s1.equals(s2) == false) {
+            MsgBox.showMessageDialog(this, "Mật khẩu không khớp");
+            txtXacNhanMatKhau.setBackground(Color.pink);
+            return;
+        }
+        if (validateForm()) {
+            if (sb.length() > 0) {
+                JOptionPane.showMessageDialog(this, sb.toString(), "INVALID DATA !", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-        if (validateForm()) {
-                if (sb.length() > 0) {
-                    JOptionPane.showMessageDialog(this, sb.toString(), "INVALID DATA !", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-                insert();
-        }else{
+            insert();
+        } else {
             MsgBox.showMessageDialog(this, "Bạn chưa nhập đầy đủ thông tin !");
         }
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-        String s1 = txtMatKhau.getText();
-        String s2 = txtXacNhanMatKhau.getText();
-        StringBuilder sb= new StringBuilder();
+        String s1 = new String(txtMatKhau.getPassword());
+        String s2 = new String(txtXacNhanMatKhau.getPassword());
+        StringBuilder sb = new StringBuilder();
         checkSDT(txtSDT, sb);
-        
-            if (s1.equals(s2)==false) {
-                MsgBox.showMessageDialog(this,  "Mật khẩu không khớp");
-                txtXacNhanMatKhau.setBackground(Color.pink);
+
+        if (s1.equals(s2) == false) {
+            MsgBox.showMessageDialog(this, "Mật khẩu không khớp");
+            txtXacNhanMatKhau.setBackground(Color.pink);
+            return;
+        }
+        if (MsgBox.showConfirmDialog(this, "Bạn thực sự muốn cập nhật nhân viên này")) {
+            if (sb.length() > 0) {
+                JOptionPane.showMessageDialog(this, sb.toString(), "INVALID DATA !", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            if(MsgBox.showConfirmDialog(this, "Bạn thực sự muốn cập nhật nhân viên này")) {
-                if (sb.length() > 0) {
-                    JOptionPane.showMessageDialog(this, sb.toString(), "INVALID DATA !", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-                this.update();
-            }
+            this.update();
+        }
     }//GEN-LAST:event_btnSuaActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
@@ -537,25 +537,24 @@ public class NhanVien_panel extends javax.swing.JPanel {
     private javax.swing.JPasswordField txtXacNhanMatKhau;
     // End of variables declaration//GEN-END:variables
 
-    
-    public void init(){
+    public void init() {
         fillTable();
         viewTable();
     }
-    
-    public String matKhauToSao(String pass){
-        String sao="";
-        for(int i=0;i<pass.length();i++){
-            sao+="*";
+
+    public String matKhauToSao(String pass) {
+        String sao = "";
+        for (int i = 0; i < pass.length(); i++) {
+            sao += "*";
         }
         return sao;
     }
-    
+
     NhanVienDao dao = new NhanVienDao();
-    
-    void fillTable(){
-    //lấy list nhanVien từ CSDL điền vào bảng
-    //LƯU Ý: CHỈ TRƯỞNG PHÒNG MỚI XEM ĐƯỢC MẬT KHẨU CỦA NGƯỜI KHÁC
+
+    void fillTable() {
+        //lấy list nhanVien từ CSDL điền vào bảng
+        //LƯU Ý: CHỈ TRƯỞNG PHÒNG MỚI XEM ĐƯỢC MẬT KHẨU CỦA NGƯỜI KHÁC
         DefaultTableModel model = (DefaultTableModel) tbNhanVien.getModel();
         model.setRowCount(0);
         try {
@@ -567,11 +566,11 @@ public class NhanVien_panel extends javax.swing.JPanel {
                     nv.isGioiTinh() ? "Nam" : "Nữ",
                     nv.getDiaChi(),
                     nv.getSdt(),
-                    XDate.toString(nv.getNgaySinh(),"dd/MM/yyyy"),
-                    Auth.user.isVaiTro()?nv.getMatKhau():matKhauToSao(nv.getMatKhau()), 
+                    XDate.toString(nv.getNgaySinh(), "dd/MM/yyyy"),
+                    Auth.user.isVaiTro() ? nv.getMatKhau() : matKhauToSao(nv.getMatKhau()),
                     //đăng nhập vai trò nhân viên thì mật khẩu sẽ được hiện thành dấu * và ngược lại
-//                    nv.getMatKhau(),
-                    nv.isVaiTro()?"Quản lí" :"Nhân viên"
+                    //                    nv.getMatKhau(),
+                    nv.isVaiTro() ? "Quản lí" : "Nhân viên"
                 };
                 model.addRow(row);
             }
@@ -580,7 +579,8 @@ public class NhanVien_panel extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }
-        private static String hashPassword(String password) {
+
+    private static String hashPassword(String password) {
         try {
 //            SecureRandom random = new SecureRandom();
 //            byte[] salt = new byte[16];
@@ -602,29 +602,30 @@ public class NhanVien_panel extends javax.swing.JPanel {
             return null;
         }
     }
-    NhanVien getForm(){    
-    //lấy thông tin trên form cho vào đt nhanVien
-    //return nhanVien
-    
+
+    NhanVien getForm() {
+        //lấy thông tin trên form cho vào đt nhanVien
+        //return nhanVien
+
         NhanVien nv = new NhanVien();
         nv.setMaNV(txtMaNV.getText());
         nv.setTenNV(txtTenNV.getText());
         nv.setGioiTinh(cboGioiTinh.getSelectedIndex() == 0);
         nv.setDiaChi(txtDiaChi.getText());
         nv.setSdt(txtSDT.getText());
-        String ngay = ((JTextField)dateChooser.getDateEditor().getUiComponent()).getText();
+        String ngay = ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText();
         nv.setNgaySinh(dateChooser.getDate());
         nv.setMatKhau(hashPassword(new String(txtMatKhau.getPassword())));
         boolean vaitro = true; //mac dinh la nv
         if (rdoQL.isSelected()) {
             vaitro = true;//Quản lí
-        }else{
-            vaitro=false;
+        } else {
+            vaitro = false;
         }
         nv.setVaiTro(vaitro);
         return nv;
     }
-    
+
     void setForm(NhanVien nv) {//đưa dữ liệu lên form
         txtMaNV.setText(nv.getMaNV());
         txtTenNV.setText(nv.getTenNV());
@@ -634,145 +635,146 @@ public class NhanVien_panel extends javax.swing.JPanel {
 //        txtNgaySinh.setText(XDate.toString(nv.getNgaySinh(),"dd/MM/yyyy"));
         dateChooser.setDate(nv.getNgaySinh());
         txtMatKhau.setText(nv.getMatKhau());
-        if (nv.isVaiTro()==true) {
+        if (nv.isVaiTro() == true) {
             rdoQL.setSelected(true);
         } else {
             rdoNV.setSelected(true);
         }
         txtXacNhanMatKhau.setText(nv.getMatKhau());
     }
-    
+
     int row = -1; //chứa vị trí hiện hành của nhân viên
-    void updateStatus(){  //cập nhật trạng thái form
-          boolean edit = (this.row >= 0); //đang chọn một hàng nào đó ->> trạng thái edit
-          boolean first = (this.row == 0); //đang ở bản ghi đầu tiên 
-          boolean last = (this.row == tbNhanVien.getRowCount() - 1); // đang ở bản ghi cuối cùng
-          
-          //trạng thái form
-          txtMaNV.setEditable(!edit);
-          btnThem.setEnabled(!edit);
-          btnSua.setEnabled(edit);
-          btnXoa.setEnabled(edit);
-          
-          //trạng thái điều hướng 
-          btnFirst.setEnabled(edit && !first);
-          btnPrev.setEnabled(edit && !first);
-          btnNext.setEnabled(edit && !last);
-          btnLast.setEnabled(edit && !last);
+
+    void updateStatus() {  //cập nhật trạng thái form
+        boolean edit = (this.row >= 0); //đang chọn một hàng nào đó ->> trạng thái edit
+        boolean first = (this.row == 0); //đang ở bản ghi đầu tiên 
+        boolean last = (this.row == tbNhanVien.getRowCount() - 1); // đang ở bản ghi cuối cùng
+
+        //trạng thái form
+        txtMaNV.setEditable(!edit);
+        btnThem.setEnabled(!edit);
+        btnSua.setEnabled(edit);
+        btnXoa.setEnabled(edit);
+
+        //trạng thái điều hướng 
+        btnFirst.setEnabled(edit && !first);
+        btnPrev.setEnabled(edit && !first);
+        btnNext.setEnabled(edit && !last);
+        btnLast.setEnabled(edit && !last);
     }
-    
-    void edit(){//điền thông tin đt nhanVien lên form (theo vị trí row)
+
+    void edit() {//điền thông tin đt nhanVien lên form (theo vị trí row)
         try {
-          String maNV = (String) tbNhanVien.getValueAt(this.row,0);
-          NhanVien nv = dao.selectById(maNV);
-          this.setForm(nv);
-          this.updateStatus();
+            String maNV = (String) tbNhanVien.getValueAt(this.row, 0);
+            NhanVien nv = dao.selectById(maNV);
+            this.setForm(nv);
+            this.updateStatus();
         } catch (Exception e) {
             MsgBox.showMessageDialog(this, "Lỗi truy vấn dữ liệu");
             e.printStackTrace();
-        }  
+        }
     }
-    void first(){
-          this.row = 0;
-          this.edit();
-          tbNhanVien.setRowSelectionInterval(row, row);
+
+    void first() {
+        this.row = 0;
+        this.edit();
+        tbNhanVien.setRowSelectionInterval(row, row);
 
     }
-    
-    void prev(){
-          if (this.row > 0) {
-              this.row--;
-              this.edit();
-              tbNhanVien.setRowSelectionInterval(row, row);
-          }
-    }
-      
-    void next(){
-           if (this.row < tbNhanVien.getRowCount() - 1) {
-              this.row++;
-              this.edit();
-              tbNhanVien.setRowSelectionInterval(row, row);
-          } 
-    }
-    
-    void last(){
-           this.row = tbNhanVien.getRowCount() -1 ;
-           this.edit();
-           tbNhanVien.setRowSelectionInterval(row, row);
-    }
-    
-    void clearForm(){ //xóa trắng form
-          this.setForm(new NhanVien());
-          this.row = -1;
-          this.updateStatus();
-          rdoNV.setSelected(true);
-          txtTenNV.setBackground(white);
-          cboGioiTinh.setSelectedIndex(0);
-          txtMaNV.setBackground(white);
-          txtXacNhanMatKhau.setText("");
-          txtMaNV.setEditable(false);
-    }
-    
-    void insert(){
-    //lấy thông tin trên form để
-    //thêm (đăng kí) nhân viên - quản lí vào CSDL
-          NhanVien model = getForm();
-          try {
-              dao.insert(model);
-              this.fillTable();
-              this.clearForm();
-              MsgBox.showMessageDialog(this, "Thêm mới nhân viên thành công");
-          } catch (Exception e) {
-              MsgBox.showMessageDialog(this, "Thêm mới nhân viên thất bại !");
-              e.printStackTrace();
-          }
-      }
 
-      void update(){
-    //lấy thông tin trên form để
-    //cập nhật nhanVien theo maNV
-          NhanVien model = getForm();
-          try {
-              dao.update(model);
-              this.fillTable();
-              this.clearForm();
-              MsgBox.showMessageDialog(this, "Cập nhật nhân viên thành công");
-          } catch (Exception e) {
-              MsgBox.showMessageDialog(this, "Cập nhật nhân viên thất bại !");
-              e.printStackTrace();
-          }
-      }
-      
-      void delete(){
-    //lấy maNV trên form, xóa nv theo maNV
-    //xóa trắng form
-          if (!Auth.isManager()) { //kiểm tra nếu là trưởng phòng mới có quyền xóa
-              MsgBox.showMessageDialog(this, "Bạn không có quyền xóa nhân viên");
-          }else{
-              String manv = txtMaNV.getText();
-              if (manv.equals(Auth.user.getMaNV())) {
+    void prev() {
+        if (this.row > 0) {
+            this.row--;
+            this.edit();
+            tbNhanVien.setRowSelectionInterval(row, row);
+        }
+    }
+
+    void next() {
+        if (this.row < tbNhanVien.getRowCount() - 1) {
+            this.row++;
+            this.edit();
+            tbNhanVien.setRowSelectionInterval(row, row);
+        }
+    }
+
+    void last() {
+        this.row = tbNhanVien.getRowCount() - 1;
+        this.edit();
+        tbNhanVien.setRowSelectionInterval(row, row);
+    }
+
+    void clearForm() { //xóa trắng form
+        this.setForm(new NhanVien());
+        this.row = -1;
+        this.updateStatus();
+        rdoNV.setSelected(true);
+        txtTenNV.setBackground(white);
+        cboGioiTinh.setSelectedIndex(0);
+        txtMaNV.setBackground(white);
+        txtXacNhanMatKhau.setText("");
+        txtMaNV.setEditable(false);
+    }
+
+    void insert() {
+        //lấy thông tin trên form để
+        //thêm (đăng kí) nhân viên - quản lí vào CSDL
+        NhanVien model = getForm();
+        try {
+            dao.insert(model);
+            this.fillTable();
+            this.clearForm();
+            MsgBox.showMessageDialog(this, "Thêm mới nhân viên thành công");
+        } catch (Exception e) {
+            MsgBox.showMessageDialog(this, "Thêm mới nhân viên thất bại !");
+            e.printStackTrace();
+        }
+    }
+
+    void update() {
+        //lấy thông tin trên form để
+        //cập nhật nhanVien theo maNV
+        NhanVien model = getForm();
+        try {
+            dao.update(model);
+            this.fillTable();
+            this.clearForm();
+            MsgBox.showMessageDialog(this, "Cập nhật nhân viên thành công");
+        } catch (Exception e) {
+            MsgBox.showMessageDialog(this, "Cập nhật nhân viên thất bại !");
+            e.printStackTrace();
+        }
+    }
+
+    void delete() {
+        //lấy maNV trên form, xóa nv theo maNV
+        //xóa trắng form
+        if (!Auth.isManager()) { //kiểm tra nếu là trưởng phòng mới có quyền xóa
+            MsgBox.showMessageDialog(this, "Bạn không có quyền xóa nhân viên");
+        } else {
+            String manv = txtMaNV.getText();
+            if (manv.equals(Auth.user.getMaNV())) {
                 MsgBox.showMessageDialog(this, "Bạn không được xóa chính mình");
-              }
-              else if  (MsgBox.showConfirmDialog(this, "Bạn thực sự muốn xóa nhân viên này")) {
-                  try {
-                      dao.delete(manv);
-                      this.fillTable();
-                      this.clearForm();
-                      MsgBox.showMessageDialog(this, "Xóa nhân viên thành công !");
-                  }catch (Exception e) {
-                    MsgBox.showMessageDialog(this, "Không thể xóa nhân viên");   
-              }
-           }
-        }      
+            } else if (MsgBox.showConfirmDialog(this, "Bạn thực sự muốn xóa nhân viên này")) {
+                try {
+                    dao.delete(manv);
+                    this.fillTable();
+                    this.clearForm();
+                    MsgBox.showMessageDialog(this, "Xóa nhân viên thành công !");
+                } catch (Exception e) {
+                    MsgBox.showMessageDialog(this, "Không thể xóa nhân viên");
+                }
+            }
+        }
     }
-      
+
     public static boolean checkSDT(JTextField field, StringBuilder sb) {
         boolean ok = true;
 
         Pattern pattern = Pattern.compile("(0?)(3[2-9]|5[6|8|9]"
-        + "|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$"); //biểu thức chính quy kiểm tra số điện thoại VN tìm từ trên mạng
+                + "|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$"); //biểu thức chính quy kiểm tra số điện thoại VN tìm từ trên mạng
 //        Pattern pattern = Pattern.compile("^[0-9._-]{10,11}$"); //phải là số và có từ 10 đến 11 kí tự
-        
+
         Matcher matcher = pattern.matcher(field.getText());
 
         if (!matcher.find()) {
@@ -781,22 +783,21 @@ public class NhanVien_panel extends javax.swing.JPanel {
         }
         return ok;
     }
-    
-        final static String DATE_FORMAT = "dd/MM/yyyy";
 
-        public static boolean checkNgaySinh(String date) 
-        {
+    final static String DATE_FORMAT = "dd/MM/yyyy";
+
+    public static boolean checkNgaySinh(String date) {
         try {
             DateFormat df = new SimpleDateFormat(DATE_FORMAT);
             df.setLenient(false);
             df.parse(date);
             return true;
         } catch (ParseException e) {
-            return false;  
+            return false;
         }
-        }
-        
-    void viewTable(){
+    }
+
+    void viewTable() {
         tbNhanVien.getColumnModel().getColumn(0).setPreferredWidth(60);
         tbNhanVien.getColumnModel().getColumn(1).setPreferredWidth(140);
         tbNhanVien.getColumnModel().getColumn(2).setPreferredWidth(80);
@@ -807,5 +808,5 @@ public class NhanVien_panel extends javax.swing.JPanel {
         tbNhanVien.getColumnModel().getColumn(7).setPreferredWidth(70);
         tbNhanVien.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
     }
-      
+
 }

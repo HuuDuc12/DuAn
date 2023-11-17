@@ -11,10 +11,33 @@ import java.sql.*;
  * @author asus
  */
 public class XJDBC {
+   
     private static String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private static String dburl="jdbc:sqlserver://localhost;database=QuanLyBanHang1;encrypt=true;trustServerCertificate=true;";
     private static String username="sa1";
     private static String password="123";
+
+    public static void NapUser(String user, String passWord){
+        username = user;
+        password = passWord;
+    }  
+
+    public static String getUsername() {
+        return username;
+    }
+
+    public static void setUsername(String username) {
+        XJDBC.username = username;
+    }
+
+    public static String getPassword() {
+        return password;
+    }
+
+    public static void setPassword(String password) {
+        XJDBC.password = password;
+    }
+    
     public static store.app.utils.clsConnectDB connection = new  store.app.utils.clsConnectDB ();   
     /*
     * Nạp driver

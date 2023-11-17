@@ -484,9 +484,10 @@ public final class MainFrame extends javax.swing.JFrame {
 
     void dangxuat() {
         Auth.clear();
-        new Login_Dialog(this, true).setVisible(true);
+        new Login_Dialog(null, true).setVisible(true);
         processLoginSuccessful();
         this.dispose();
+        
     }
 
     /**

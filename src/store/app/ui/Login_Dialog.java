@@ -104,7 +104,6 @@ public class Login_Dialog extends javax.swing.JDialog {
 
         btnLogin.setBackground(new java.awt.Color(204, 255, 204));
         btnLogin.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/Boy.png"))); // NOI18N
         btnLogin.setText("LOGIN");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +113,6 @@ public class Login_Dialog extends javax.swing.JDialog {
 
         bntExit.setBackground(new java.awt.Color(204, 255, 204));
         bntExit.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        bntExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/Anchor.png"))); // NOI18N
         bntExit.setText("EXIT");
         bntExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,7 +146,6 @@ public class Login_Dialog extends javax.swing.JDialog {
 
         btnKetnoidt.setBackground(new java.awt.Color(204, 255, 204));
         btnKetnoidt.setFont(new java.awt.Font("Segoe UI Semibold", 0, 13)); // NOI18N
-        btnKetnoidt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/Boy.png"))); // NOI18N
         btnKetnoidt.setText("Kết nối database");
         btnKetnoidt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,12 +165,15 @@ public class Login_Dialog extends javax.swing.JDialog {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(73, 73, 73)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
-                                .addComponent(bntExit, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(bntExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGap(0, 87, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -185,7 +185,7 @@ public class Login_Dialog extends javax.swing.JDialog {
                                         .addComponent(jLabel2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap(12, Short.MAX_VALUE))
+                        .addGap(12, 12, 12))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,14 +211,16 @@ public class Login_Dialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(chkShowpass)
                 .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(bntExit)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(29, 29, 29)
-                        .addComponent(btnLogin)))
-                .addGap(29, 29, 29)
-                .addComponent(btnKetnoidt)
+                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(bntExit, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnKetnoidt, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(lblLogo)
@@ -347,18 +349,17 @@ public class Login_Dialog extends javax.swing.JDialog {
         StringBuilder sb = new StringBuilder();
         Validator.validateEmty(txtUsername, sb, "Tên đăng nhập không được để trống !");
         Validator.validateEmty(txtPassword, sb, "Mật khẩu không được để trống !");
-        
+        //check
         if (sb.length() > 0) {
             MsgBox.showErrorDialog(this, sb.toString(), "LỖI");
             return;
         }
         
         String manv =  txtUsername.getText();//manv là usernam
-        String matkhau = hashPassword(new String(txtPassword.getPassword()));
+        String matkhau = hashPassword(new String(txtPassword.getPassword()));// Hash code password
         
         NhanVien nv = dao.selectById(manv);//tìm nhân viên theo mã nv
          String MKluu = nv.getMatKhau();
-         System.out.println(MKluu+": "+matkhau);
 
         if (nv==null) {//không tìm thấy username
             MsgBox.showErrorDialog(this, "Sai tên đăng nhập","Lỗi");
@@ -366,7 +367,7 @@ public class Login_Dialog extends javax.swing.JDialog {
             MsgBox.showErrorDialog(this, "Sai mật khẩu","Lỗi");
         }else{     
           Auth.user = nv;   // gán user login thành công
-            MsgBox.showMessageDialog(this, "Đăng nhập thành công !\nNgười dùng " + "'" +Auth.user.getMaNV() + "'");
+            MsgBox.showMessageDialog(this, "Đăng nhập thành công !");
             MainFrame mainfr = new MainFrame();
             mainfr.setVisible(true);
             this.dispose();
