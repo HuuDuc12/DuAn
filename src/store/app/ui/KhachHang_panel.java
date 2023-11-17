@@ -77,6 +77,7 @@ public class KhachHang_panel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        setMaximumSize(new java.awt.Dimension(1254, 32767));
 
         lblTitle.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(30, 55, 153));
@@ -161,7 +162,7 @@ public class KhachHang_panel extends javax.swing.JPanel {
         pnlChucNang.setBackground(new java.awt.Color(255, 255, 255));
         pnlChucNang.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        btnThem.setBackground(new java.awt.Color(246, 185, 59));
+        btnThem.setBackground(new java.awt.Color(204, 255, 204));
         btnThem.setForeground(new java.awt.Color(30, 55, 153));
         btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/them.png"))); // NOI18N
         btnThem.setText("Save");
@@ -171,7 +172,7 @@ public class KhachHang_panel extends javax.swing.JPanel {
             }
         });
 
-        btnSua.setBackground(new java.awt.Color(246, 185, 59));
+        btnSua.setBackground(new java.awt.Color(204, 255, 204));
         btnSua.setForeground(new java.awt.Color(30, 55, 153));
         btnSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/sua.png"))); // NOI18N
         btnSua.setText("Edit");
@@ -181,7 +182,7 @@ public class KhachHang_panel extends javax.swing.JPanel {
             }
         });
 
-        btnXoa.setBackground(new java.awt.Color(246, 185, 59));
+        btnXoa.setBackground(new java.awt.Color(204, 255, 204));
         btnXoa.setForeground(new java.awt.Color(30, 55, 153));
         btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/delete-button.png"))); // NOI18N
         btnXoa.setText("Delete");
@@ -191,7 +192,7 @@ public class KhachHang_panel extends javax.swing.JPanel {
             }
         });
 
-        btnMoi.setBackground(new java.awt.Color(246, 185, 59));
+        btnMoi.setBackground(new java.awt.Color(204, 255, 204));
         btnMoi.setForeground(new java.awt.Color(30, 55, 153));
         btnMoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/Anchor.png"))); // NOI18N
         btnMoi.setText("New");
@@ -201,7 +202,7 @@ public class KhachHang_panel extends javax.swing.JPanel {
             }
         });
 
-        btnFirst.setBackground(new java.awt.Color(246, 185, 59));
+        btnFirst.setBackground(new java.awt.Color(204, 255, 204));
         btnFirst.setForeground(new java.awt.Color(30, 55, 153));
         btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/last.png"))); // NOI18N
         btnFirst.setToolTipText("");
@@ -211,7 +212,7 @@ public class KhachHang_panel extends javax.swing.JPanel {
             }
         });
 
-        btnPrev.setBackground(new java.awt.Color(246, 185, 59));
+        btnPrev.setBackground(new java.awt.Color(204, 255, 204));
         btnPrev.setForeground(new java.awt.Color(30, 55, 153));
         btnPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/back.png"))); // NOI18N
         btnPrev.addActionListener(new java.awt.event.ActionListener() {
@@ -220,7 +221,7 @@ public class KhachHang_panel extends javax.swing.JPanel {
             }
         });
 
-        btnNext.setBackground(new java.awt.Color(246, 185, 59));
+        btnNext.setBackground(new java.awt.Color(204, 255, 204));
         btnNext.setForeground(new java.awt.Color(30, 55, 153));
         btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/next.png"))); // NOI18N
         btnNext.addActionListener(new java.awt.event.ActionListener() {
@@ -229,7 +230,7 @@ public class KhachHang_panel extends javax.swing.JPanel {
             }
         });
 
-        btnLast.setBackground(new java.awt.Color(246, 185, 59));
+        btnLast.setBackground(new java.awt.Color(204, 255, 204));
         btnLast.setForeground(new java.awt.Color(30, 55, 153));
         btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/store/app/icons/first.png"))); // NOI18N
         btnLast.addActionListener(new java.awt.event.ActionListener() {
