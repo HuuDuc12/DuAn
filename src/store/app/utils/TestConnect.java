@@ -19,7 +19,7 @@ public class TestConnect {
     Connection connec;
     String url;
     try{
-        url= "jdbc:sqlserver://localhost:1433;databaseName=QuanLyBanHang;user=sa1;password=123";
+        url= "jdbc:sqlserver://localhost:1433;databaseName=QuanLyBanHang1;user=sa1;password=123";
         //url= "jdbc:mysql://localhost:3306/edusys";
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         //Class.forName("com.mysql.jdbc.Driver");//my sql

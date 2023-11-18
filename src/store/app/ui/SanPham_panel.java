@@ -247,7 +247,7 @@ public class SanPham_panel extends javax.swing.JPanel {
 
         lblTitle.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(30, 55, 153));
-        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblTitle.setText("QUẢN LÍ SẢN PHẨM");
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
