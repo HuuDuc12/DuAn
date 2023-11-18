@@ -6,14 +6,13 @@ import java.awt.Toolkit;
 import java.net.PasswordAuthentication;
 import java.util.Properties;
 import java.util.Random;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.*;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+
+import jakarta.mail.*;
+import jakarta.mail.internet.*;
+
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import org.apache.xmlbeans.impl.regex.REUtil;
 import store.app.dao.NhanVienDao;
 import store.app.entity.NhanVien;
 import store.app.utils.XImage;
@@ -23,7 +22,6 @@ import store.app.utils.XImage;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author ASUS
@@ -44,30 +42,29 @@ public class QuenMatKhau extends javax.swing.JFrame {
         randCode();
 //        setIconImage(XImage.APP_ICON);
     }
-    
-   
-   
-    public void clearForm(){
+
+    public void clearForm() {
         txtRecode.setText("");
         txtPass.setText("");
         txtRepass.setText("");
     }
 
-    public void randCode(){
-            int leftLimit = 48; // numeral '0'
-            int rightLimit = 122; // letter 'z'
-            int targetStringLength = 6;
-            Random random = new Random();
+    public void randCode() {
+        int leftLimit = 48; // numeral '0'
+        int rightLimit = 122; // letter 'z'
+        int targetStringLength = 6;
+        Random random = new Random();
 
-            String randomCode = random.ints(leftLimit, rightLimit + 1)
-            .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
-            .limit(targetStringLength)
-            .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
-            .toString();
+        String randomCode = random.ints(leftLimit, rightLimit + 1)
+                .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+                .limit(targetStringLength)
+                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                .toString();
 
-            lblCode.setText(randomCode);
-            System.out.println(lblCode.getText());
-    } 
+        lblCode.setText(randomCode);
+        System.out.println(lblCode.getText());
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -324,9 +321,9 @@ public class QuenMatKhau extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailFocusGained
 
     private void btnSendCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendCodeActionPerformed
-        if (txtEmail.getText().isEmpty()==false) {
+        if (txtEmail.getText().isEmpty() == false) {
             sendMail();
-        }else{
+        } else {
             MsgBox.showMessageDialog(this, "Vui lòng nhập địa chỉ email của bạn để lấy lại mật khẩu !");
         }
 
@@ -334,8 +331,8 @@ public class QuenMatKhau extends javax.swing.JFrame {
 
     private void icon3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icon3MousePressed
         icon4.setVisible(true);
-        icon3 .setVisible(false);
-        txtRepass.setEchoChar((char)0);
+        icon3.setVisible(false);
+        txtRepass.setEchoChar((char) 0);
     }//GEN-LAST:event_icon3MousePressed
 
     private void icon4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icon4MousePressed
@@ -346,16 +343,16 @@ public class QuenMatKhau extends javax.swing.JFrame {
 
     private void icon2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icon2MousePressed
         icon1.setVisible(true);
-        icon2 .setVisible(false);
+        icon2.setVisible(false);
         txtPass.setEchoChar('*');
     }//GEN-LAST:event_icon2MousePressed
 
     //Ẩn hoặc hiện mật khẩu
-    
+
     private void icon1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icon1MousePressed
         icon2.setVisible(true);
         icon1.setVisible(false);
-        txtPass.setEchoChar((char)0);
+        txtPass.setEchoChar((char) 0);
     }//GEN-LAST:event_icon1MousePressed
 
     private void refreshCodeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshCodeMouseClicked
@@ -377,19 +374,18 @@ public class QuenMatKhau extends javax.swing.JFrame {
 
                 String s1 = txtPass.getText();
                 String s2 = txtRepass.getText();
-                if (s1.equals(s2)==false) {
-                    MsgBox.showMessageDialog(this,  "Mật khẩu không khớp");
+                if (s1.equals(s2) == false) {
+                    MsgBox.showMessageDialog(this, "Mật khẩu không khớp");
                     txtRepass.setBackground(Color.red);
                     return;
                 }
 
                 //So sánh mã xác nhận có trùng hay không ?
-
                 String s3 = lblCode.getText();
                 String s4 = txtRecode.getText();
 
-                if (s3.equals(s4)==false) {
-                    MsgBox.showMessageDialog(this,  "Mã xác nhận không khớp");
+                if (s3.equals(s4) == false) {
+                    MsgBox.showMessageDialog(this, "Mã xác nhận không khớp");
                     txtRecode.setBackground(Color.red);
                     return;
                 }
@@ -398,11 +394,11 @@ public class QuenMatKhau extends javax.swing.JFrame {
                 if (nv == null) {
                     MsgBox.showErrorDialog(this, "Tên đăng nhập không hợp lệ", "LỖI !");
                     txtUsername.setBackground(Color.red);
-                }else{
-                    int i=JOptionPane.showConfirmDialog(this, "Bạn có muốn thay đổi mật khẩu không ?",
-                        "THÔNG BÁO !",JOptionPane.YES_OPTION
-                        ,JOptionPane.QUESTION_MESSAGE);
-                    if(i==0){
+                } else {
+                    int i = JOptionPane.showConfirmDialog(this, "Bạn có muốn thay đổi mật khẩu không ?",
+                            "THÔNG BÁO !", JOptionPane.YES_OPTION,
+                             JOptionPane.QUESTION_MESSAGE);
+                    if (i == 0) {
 
                         //câu lệnh để thay đổi mật khẩu
                         try {
@@ -415,7 +411,7 @@ public class QuenMatKhau extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(this, "Mật khẩu đã được thay đổi !");
                             clearForm();
                         } catch (Exception e) {
-                            JOptionPane.showMessageDialog(this, "LỖI !!!\n"+e.getMessage());
+                            JOptionPane.showMessageDialog(this, "LỖI !!!\n" + e.getMessage());
                             //            e.printStackTrace();
                         }
                     }
@@ -424,8 +420,8 @@ public class QuenMatKhau extends javax.swing.JFrame {
                 e.printStackTrace();
                 MsgBox.showErrorDialog(this, e.getMessage(), "LỖI");
             }
-        }else{
-            MsgBox.showMessageDialog(this,  "Bạn chưa nhập đầy đủ thông tin");
+        } else {
+            MsgBox.showMessageDialog(this, "Bạn chưa nhập đầy đủ thông tin");
             return;
         }
     }//GEN-LAST:event_btnChangePassActionPerformed
@@ -443,15 +439,14 @@ public class QuenMatKhau extends javax.swing.JFrame {
         this.hide();
     }//GEN-LAST:event_loginMouseClicked
 
-    
     public boolean validateForm() {  // Kiểm tra dữ liệu nhập vào 
-        if (txtUsername.getText().isEmpty() || txtRecode.getText().isEmpty() ||
-                txtPass.getText().isEmpty() || txtRepass.getText().isEmpty()) {
+        if (txtUsername.getText().isEmpty() || txtRecode.getText().isEmpty()
+                || txtPass.getText().isEmpty() || txtRepass.getText().isEmpty()) {
             return false;
         }
         return true;
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -519,7 +514,7 @@ public class QuenMatKhau extends javax.swing.JFrame {
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 
-    public void sendMail(){
+    public void sendMail() {
         final String username = "doucd369@gmail.som";
         final String password = "xnkt udzb drtn nnf";
 
@@ -528,34 +523,69 @@ public class QuenMatKhau extends javax.swing.JFrame {
         prop.put("mail.smtp.port", "587");
         prop.put("mail.smtp.auth", "true");
         prop.put("mail.smtp.starttls.enable", "true"); //TLS
-        
+
         //Đăng nhập gmail
-        Session session = Session.getInstance(prop,
-                new javax.mail.Authenticator() {
-                    @Override
-                    protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
-                        return new javax.mail.PasswordAuthentication(username, password);
-                    }
-                });
+        // Create a mail session
+       
+        Session session = Session.getDefaultInstance(prop, 
+                new jakarta.mail.Authenticator() {
+            @Override
+            protected jakarta.mail.PasswordAuthentication getPasswordAuthentication(){
+                 jakarta.mail.PasswordAuthentication mail = new jakarta.mail.PasswordAuthentication(username, password);
+                return  mail;
+            }
+        });
 
         try {
-
+            // Create a MimeMessage object
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("doucd369@gmail.com"));
-            message.setRecipients(
-                    Message.RecipientType.TO,
-                    InternetAddress.parse(txtEmail.getText())
-            );
-            message.setSubject("Thay doi mat khau !");
-            message.setText("Ma xac nhan cua ban la : "+lblCode.getText());
 
+            // Set the sender and recipient addresses
+            message.setFrom(new InternetAddress(username));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(txtEmail.getText()));
+
+            // Set the email subject and content
+            message.setSubject("Thay doi mat khau !");
+            message.setText("Ma xac nhan cua ban la : " + lblCode.getText());
+
+            // Send the message
             Transport.send(message);
             JOptionPane.showMessageDialog(this, "Email đã được gửi !");
-            System.out.println("Done");
+            System.out.println("Email sent successfully!");
 
         } catch (MessagingException e) {
             e.printStackTrace();
         }
-    }
-}
 
+//        Session session = Session.getInstance(prop,
+//                new jakarta.mail.Authenticator() {
+//                    @Override
+//                    protected jakarta.mail.PasswordAuthentication getPasswordAuthentication() {
+//                        return new jakarta.mail.PasswordAuthentication;
+//                    }
+//                });
+//                new javax.mail.Authenticator() {
+//                    @Override
+//                    protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
+//                        return new javax.mail.PasswordAuthentication(username, password);
+//                    }
+//                });
+//        try {
+//
+//            Message message = new MimeMessage(session);
+//            message.setFrom(new InternetAddress("doucd369@gmail.com"));
+//            message.setRecipients(
+//                    Message.RecipientType.TO,
+//                    InternetAddress.parse(txtEmail.getText())
+//            );
+//            message.setSubject("Thay doi mat khau !");
+//            message.setText("Ma xac nhan cua ban la : " + lblCode.getText());
+
+//            Transport.send(message);
+
+//        } catch (MessagingException e) {
+//            e.printStackTrace();
+//        }
+//    }
+}
+}

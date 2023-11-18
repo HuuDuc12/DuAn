@@ -37,7 +37,8 @@ public class Login_Dialog extends javax.swing.JDialog {
 //        setIconImage(XImage.APP_ICON);
         setResizable(false);
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(null); 
+        System.out.println(hashPassword("123"));
     }
 
  private static String hashPassword(String password) {
@@ -360,7 +361,7 @@ public class Login_Dialog extends javax.swing.JDialog {
         
         NhanVien nv = dao.selectById(manv);//tìm nhân viên theo mã nv
          String MKluu = nv.getMatKhau();
-
+      
         if (nv==null) {//không tìm thấy username
             MsgBox.showErrorDialog(this, "Sai tên đăng nhập","Lỗi");
         }else if(!matkhau.equals(MKluu)){

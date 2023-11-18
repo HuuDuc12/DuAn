@@ -19,7 +19,7 @@ public class MsgBox {
     @param message là thông báo
     */ 
     public static void showMessageDialog(Component parent, String content){
-        JOptionPane.showMessageDialog(parent, content, "Hệ thống quản lí bán hàng NIKE STORE", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(parent, content, "Hệ thống quản lí cửa hàng trà sữa Bae Team", JOptionPane.INFORMATION_MESSAGE);
     }
     
     
@@ -29,7 +29,7 @@ public class MsgBox {
     @param message là thông báo
     */
     public static boolean showConfirmDialog(Component parent, String content){
-        int choose = JOptionPane.showConfirmDialog(parent, content, "Hệ thống quản lí bán hàng NIKE STORE",
+        int choose = JOptionPane.showConfirmDialog(parent, content, "Hệ thống quản lí cửa hàng trà sữa Bae Team",
                      JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         return choose == JOptionPane.YES_OPTION;
     }

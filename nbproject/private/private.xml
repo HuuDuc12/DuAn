@@ -3,12 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/doduc/Downloads/DA_1/src/store/app/utils/XDate.java</file>
-            <file>file:/C:/Users/doduc/Downloads/DA_1/src/store/app/ui/Login_Dialog.java</file>
-            <file>file:/C:/Users/doduc/Downloads/DA_1/src/store/app/ui/NhanVien_panel.java</file>
-            <file>file:/C:/Users/doduc/Downloads/DA_1/src/store/app/entity/NhanVien.java</file>
-            <file>file:/C:/Users/doduc/Downloads/DA_1/src/store/app/utils/XJDBC.java</file>
-            <file>file:/C:/Users/doduc/Downloads/DA_1/src/store/app/dao/NhanVienDao.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/ui/NhanVien_panel.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/ui/MainFrame.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/ui/Chao_Dialog.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/ui/LinkDATABASE.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/ui/SanPham_panel.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/ui/Home_panel.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/controller/ChuyenManHinh.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/ui/Login_Dialog.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/ui/QuenMatKhau.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/entity/SanPham.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/utils/TestConnect.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/utils/XJDBC.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/search.htm</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/dao/KhachHangDAO.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/ui/KhachHang_panel.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/dao/NhanVienDao.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/entity/NhanVien.java</file>
+            <file>file:/C:/Users/doduc/OneDrive/Desktop/DA_1/src/store/app/ui/HoaDon_panel.java</file>
         </group>
     </open-files>
 </project-private>
